@@ -1,0 +1,10 @@
+-name: Demonstrating User id
+host: all
+tasks:
+  name: checking the user id
+  ansible.builtin.shell: id
+  register: OUT
+
+-name: Printing the User profile
+   ansible.builtin.debug:
+    msg: "{{ OUT.stdout}}" 
