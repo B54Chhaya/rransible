@@ -1,9 +1,21 @@
-- name: "Configuring {{COMPONENT}} Repository"
+- name: Configuring Mongodb Repository
   ansible.builtin.copy:
-    src: {{COMPONENT}}.repo
+    src: mongodb.repo
     dest: /etc/yum.repos.d/mongodb.repo
   
 - name: Installing {{ COMPONENT }} 
   ansible.builtin.package:
-    name: {{COMPONENT}}-org
+    name: mongodb-org
     state: present
+
+- name: Updating the Mongodb config to be pblic
+  ansible.builtin.replace:
+    path: /etc/yum.repos.d/mongodb.repo
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: Stating Mongodb 
+  ansible.builtin.systemd:
+    name: mongod
+    state: started
+    enabled: true
