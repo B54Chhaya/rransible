@@ -1,22 +1,22 @@
-- name: Configuring ${COMPONENT} Repository
+- name: Configuring mongodb Repository
   ansible.builtin.copy:
-    src: ${COMPONENT}.repo
-    dest: /etc/yum.repos.d/${COMPONENT}.repo
+    src: mongodb.repo
+    dest: /etc/yum.repos.d/mongodb.repo
   
 - name: Installing {{ COMPONENT }} 
   ansible.builtin.package:
-    name: ${COMPONENT}-org
+    name: mongodb-org
     state: present
 
-- name: Updating the ${COMPONENT} config to be pblic
+- name: Updating the mongodb config to be pblic
   ansible.builtin.replace:
-    path: /etc/${DB}.conf
+    path: /etc/mongod.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
-- name: Stating ${COMPONENT} 
+- name: Stating mongodb
   ansible.builtin.systemd:
-    name: ${DB}
+    name: mongod
     state: started
     enabled: true
 
@@ -26,13 +26,13 @@
     dest: /tmp
     remote_src: yes
 
-- name: Injecting the ${COMPONENT} catalogue schema
+- name: Injecting the mongodb catalogue schema
   community.mongodb.mongodb_shell:
-    file: "/tmp/${COMPONENT}-mains/catalogue.js"
+    file: "/tmp/mongodb-mains/catalogue.js"
     idempotent: yes
 
-- name: Injecting the ${COMPONENT} catalogue schema
+- name: Injecting the mongodb catalogue schema
   community.mongodb.mongodb_shell:
-    file: "/tmp/${COMPONENT}-mains/users.js"
+    file: "/tmp/mongodb-mains/users.js"
     idempotent: yes
 
