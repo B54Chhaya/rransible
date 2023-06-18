@@ -1,4 +1,4 @@
-- name: Configuring {{COMPONENT}} Repository 
+- name: "Configuring {{COMPONENT}} Repository"
   ansible.builtin.copy:
     src: {{COMPONENT}}.repo
     dest: /etc/yum.repos.d/mongodb.repo
