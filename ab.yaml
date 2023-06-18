@@ -10,4 +10,10 @@
       ansible.builtin.debug:
        msg: "{{ OUT.stdout }}"
 
-
+    - name: Demo on Loop
+      ansible_builtin_debug:
+       msg: "{{ i }}"
+      loop:
+       - 10
+       - 20
+       - 30
