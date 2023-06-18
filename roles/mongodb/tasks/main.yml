@@ -1,9 +1,9 @@
-- name: Configuring {{ COMPONENT }} Repository 
+- name: Configuring mongodb Repository 
   ansible.builtin.copy:
-    src: {{ COMPONENT }}.repo
+    src: mongodb.repo
     dest: /etc/yum.repos.d/mongodb.repo
   
 - name: Installing {{ COMPONENT }} 
   ansible.builtin.package:
-    name: {{ DB }}-org
+    name: mongod-org
     state: present
