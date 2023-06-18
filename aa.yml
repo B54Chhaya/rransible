@@ -1,6 +1,3 @@
-
-- name: Play1  
-
 - name: Play1  
   hosts: all 
   tasks:
