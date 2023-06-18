@@ -12,7 +12,7 @@
 
     - name: Demo on Loop
       ansible.builtin.debug:
-       msg: "Value is {{ i }}"
+       msg: "Value is {{ item }}"
       loop:
        - 10
        - 20
