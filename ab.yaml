@@ -22,3 +22,9 @@
       ansible.builtin.copy:
          src: system.txt
          dest: /home/centos/system.txt
+
+
+    - name: Copy from source to destination template
+      ansible.builtin.template:
+         src: env.txt
+         dest: /home/centos/env.txt
