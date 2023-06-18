@@ -1,5 +1,6 @@
-- name: Play1
-  ansible.builtin.debug:
-    msg: Hello from Play1
-
+- name: Installing Nginx
+  ansible.builtin.package:
+    name: nginx
+    state: present
+    
     
