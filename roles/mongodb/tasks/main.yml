@@ -1,6 +1,6 @@
-- name: Configuring {{COMP}} Repository
+- name: Configuring mongodb Repository
   ansible.builtin.copy:
-    src: {{COMP}}.repo
+    src: mongodb.repo
     dest: /etc/yum.repos.d/mongodb.repo
   
 - name: Installing {{COMP}} 
