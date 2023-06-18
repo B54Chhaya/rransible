@@ -23,7 +23,7 @@
 
 - name: Copy the frontend component which is downloaded on the remote machine
   ansible.builtin.copy:
-    src: Roboshop.conf
+    src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
 
