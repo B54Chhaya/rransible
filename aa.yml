@@ -1,4 +1,5 @@
 -name: Demonstrating User id
+
 host: all
 tasks:
   -name: checking the user id
@@ -7,4 +8,4 @@ tasks:
 
   -name: Printing the User profile
    ansible.builtin.debug:
-    msg: "{{ OUT.stdout}}" 
+    msg: "{{ OUT.stdout }}" 
