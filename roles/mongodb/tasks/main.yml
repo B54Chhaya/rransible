@@ -5,7 +5,7 @@
   
 - name: Installing {{COMP}} 
   ansible.builtin.package:
-    name: mongodb-org
+    name: {{COMP}}-org
     state: present
 
 - name: Updating the mongodb config to be pblic
