@@ -21,6 +21,12 @@
     dest: /usr/share/nginx/html
     remote_src: yes
 
+#- name: Copy the frontend component which is downloaded on the remote machine
+#  ansible.builtin.copy:
+#    src: /etc/localhost.conf
+#    dest: /etc/nginx/default.d/roboshop.conf
+#    remote_src: yes
+
 
 
 
