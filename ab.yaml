@@ -11,7 +11,7 @@
        msg: "{{ OUT.stdout }}"
 
     - name: Demo on Loop
-      ansible_builtin_debug:
+      ansible.builtin.debug:
        msg: "Value is {{ i }}"
       loop:
        - 10
