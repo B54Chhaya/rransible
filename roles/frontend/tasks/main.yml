@@ -2,5 +2,13 @@
   ansible.builtin.package:
     name: nginx
     state: present
-    
+
+- name: Stating Nginx on Frontend
+  anisble:builtin.systemd:
+    name: nginx
+    state: started
+    enabled: true
+
+
+
     
