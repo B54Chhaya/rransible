@@ -1,2 +1,2 @@
-COMPONENT: mongodb
+COMP: mongodb
 DB: mongod 
