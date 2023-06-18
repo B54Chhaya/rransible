@@ -28,11 +28,11 @@
 
 - name: Injecting the mongodb catalogue schema
   community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-mains/catalogue.js"
+    file: "/tmp/mongodb-main/catalogue.js"
     idempotent: yes
 
 - name: Injecting the mongodb catalogue schema
   community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-mains/users.js"
+    file: "/tmp/mongodb-main/users.js"
     idempotent: yes
 
