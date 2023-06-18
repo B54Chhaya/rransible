@@ -1,5 +1,6 @@
 - name: Demonstrate User ID
   hosts: all
+  become: yes 
   tasks:
     - name: Checking the used ID
       ansible.builtin.shell: id
