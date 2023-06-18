@@ -1,0 +1,10 @@
+- name: Congiguring the {{COMPONENT}} Repository
+  ansible.builtin.copy:
+    src: {{COMPONENT}}.repo
+    dest: /etc/yum.repos.d/mongodb.repo
+
+- name: Installing {{COMPONENT}} 
+  ansible.builtin.package:
+    name: {{DB}}-org
+    state: present
+    
