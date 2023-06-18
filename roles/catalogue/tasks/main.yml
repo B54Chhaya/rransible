@@ -11,3 +11,19 @@
     name: "{{ appuser }}" 
     comment: Roboshop Application
 
+- name: Download and Extract nodejs
+  ansible.builtin.include_role:
+    name: common 
+    tasks_from: download 
+
+- name: Copy the files to Roboshop home directory
+  ansible.builtin.copy:
+    src: /tmp/{{COMPONENT}}-main/
+    dest: /home/{{appuser}}/{{COMPONENT}}
+    owner: "{{appuser}}"
+    group: "{{appuser}}"
+    remote_src: yes
+
+
+
+
