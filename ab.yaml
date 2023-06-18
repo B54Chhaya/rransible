@@ -19,6 +19,6 @@
        - 30
 
     - name: Copy from source to destination
-       ansible.builtin.copy:
+      ansible.builtin.copy:
          src: system.txt
          dest: /home/centos/system.txt
