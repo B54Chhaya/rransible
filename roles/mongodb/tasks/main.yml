@@ -1,6 +1,6 @@
 - name: Configuring {{COMP}} Repository
   ansible.builtin.copy:
-    src: {{COMP}}.repo
+    src: mongodb.repo
     dest: /etc/yum.repos.d/mongodb.repo
   
 - name: Installing {{COMP}} 
@@ -26,7 +26,7 @@
     dest: /tmp
     remote_src: yes
 
-- name: Injecting the mongodb catalogue schema
+- name: Injecting the mongodb catalogue and users schema
   community.mongodb.mongodb_shell:
     file: "/tmp/mongodb-main/{{ item }}.js"
     idempotent: yes
