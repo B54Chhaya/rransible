@@ -1,11 +1,9 @@
-- name: Demonstrating User id
 
-host: all
-tasks:
-  - name: checking the user id
-  ansible.builtin.shell: id
-  register: OUT
+- name: Play1  
 
-  - name: Printing the User profile
-   ansible.builtin.debug:
-    msg: "{{ OUT.stdout }}" 
+- name: Play1  
+  hosts: all 
+  tasks:
+    - name: Printing Hello From Play1
+      ansible.builtin.debug:
+        msg: Hello from play1 of task1 
