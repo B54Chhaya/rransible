@@ -10,7 +10,7 @@
 
 - name: Updating the Mongodb config to be pblic
   ansible.builtin.replace:
-    path: /etc/mongodb.repo
+    path: /etc/mongod.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
